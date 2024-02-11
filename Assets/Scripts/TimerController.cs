@@ -5,7 +5,7 @@ using TMPro;
 public class TimerController : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    private float timerDuration = 30f; //300 seconds for 5 minutes or 180 seconds for 3 minutes
+    private float timerDuration = 180f; //300 seconds for 5 minutes or 180 seconds for 3 minutes
     public bool isTimerRunning = false;
     private GameManager gameManager;
 
