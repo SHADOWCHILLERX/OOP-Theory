@@ -5,13 +5,11 @@ using UnityEngine;
 public class BallTimer : MonoBehaviour
 {
     private float ballDestroyDelay = 5f;
-    private float hoopDestroyDelay = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("DestroyBall", ballDestroyDelay);
-        Invoke("DestroyHoop", hoopDestroyDelay);
     }
 
     // Update is called once per frame
@@ -27,13 +25,4 @@ public class BallTimer : MonoBehaviour
             Destroy(gameObject);
         } 
     }
-
-    void DestroyHoop()
-    {
-        if(gameObject.CompareTag("Hoop"))
-        {
-            Destroy(gameObject);
-        }
-    }
-    
 }

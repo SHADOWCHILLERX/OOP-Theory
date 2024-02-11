@@ -8,7 +8,7 @@ public class TitleScreen : MonoBehaviour
     private Button button;
     private GameManager gameManager;
 
-    public int difficulty;
+    public int difficulty = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,7 @@ public class TitleScreen : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDifficulty);
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -27,5 +28,6 @@ public class TitleScreen : MonoBehaviour
     void SetDifficulty()
     {
         gameManager.StartGame(difficulty);
+
     }
 }

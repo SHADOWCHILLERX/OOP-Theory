@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 7770036842007620401}
   - component: {fileID: 2832375544691984051}
   - component: {fileID: 2712879850720013188}
-  - component: {fileID: 3203591418270026966}
-  - component: {fileID: -3876922084340670660}
+  - component: {fileID: -2527966563505419514}
   m_Layer: 2
   m_Name: Blue Ring
   m_TagString: Hoop
@@ -114,7 +113,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: e121965519da8964eb443caa891ca78c, type: 3}
---- !u!114 &3203591418270026966
+--- !u!114 &-2527966563505419514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,19 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7747683466784150525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ac8d9e0f1d21044ab42710ee10b3ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointValue: 1
---- !u!114 &-3876922084340670660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7747683466784150525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7315cd2d242faca4da32637ddf2055f3, type: 3}
+  m_Script: {fileID: 11500000, guid: ce1d92910d2fa434f86d762731091a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
