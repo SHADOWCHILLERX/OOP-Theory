@@ -17,10 +17,12 @@ public class GameManager : MonoBehaviour
     private float spawnInterval = 4f;
     public TextMeshProUGUI scoreText;
     private int score;
+    private int highScore;
     private float spawnRate = 1;
     public TextMeshProUGUI dot;
 
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI highScoreText;
     public bool isGameActive = false;
     public Button restartButton;
     public GameObject titleScreen;
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
     {
         //This is Abstraction working with SpawnRandomHoop()
         InvokeRepeating("SpawnRandomHoop", startDelay, spawnInterval);
+
+        // Load the high score from player prefs
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
 
     }
 
@@ -71,15 +76,27 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        highScoreText.gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void EndGame()
     {
+        highScoreText.gameObject.SetActive(true);
         dot.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         isGameActive = false;
+
+        // Check if the current score is higher than the high score
+        if (score > highScore)
+        {
+            highScore = score;
+            // Save the new high score to player prefs
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
+        // Display the high score
+        highScoreText.text = "High Score: " + highScore;
     }
 
     
