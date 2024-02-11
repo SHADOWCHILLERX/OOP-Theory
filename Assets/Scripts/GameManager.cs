@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameManager = FindObjectOfType<GameManager>();
+        //This is Abstraction working with SpawnRandomHoop()
         InvokeRepeating("SpawnRandomHoop", startDelay, spawnInterval);
 
     }

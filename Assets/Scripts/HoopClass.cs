@@ -10,11 +10,22 @@ public class HoopClass : MonoBehaviour
     private float hoopDestroyDelay = 10f;
     protected private GameManager gameManager;
 
+    // Getter for gameManager
+    protected GameManager GetGameManager()
+    {
+        if (gameManager == null)
+        {
+            gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        }
+        return gameManager;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Invoke("DestroyHoop", hoopDestroyDelay);
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        // Access gameManager through the getter method
+        gameManager = GetGameManager();
     }
 
     // Update is called once per frame
@@ -22,7 +33,7 @@ public class HoopClass : MonoBehaviour
     {
         
     }
-
+    //This is working as Inheritance for the Red, Green, and Blue Hoops
     public virtual void HoopScore(int pointValue)
     {
        gameManager.UpdateScore(pointValue);
